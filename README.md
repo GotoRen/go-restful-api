@@ -74,3 +74,8 @@ $ curl localhost:1323/users/1
   - `$ docker rmi [イメージID]`
   - `$ docker network rm [ネットワークID]`
 
+## 📝 Reference
+- [GolangでシンプルなRESTful APIを作ってみた](https://qiita.com/yuuulf/items/b464735dfb3486d248bf)
+- [Goで作ったWebアプリをDockerで動かす](https://qiita.com/yuuulf/items/b678b00972d60c7d63dd)
+- [MySQL8.0新機能 (caching_sha2_password 認証プラグイン)](https://www.s-style.co.jp/blog/2018/05/1807/)
+
