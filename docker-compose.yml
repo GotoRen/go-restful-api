@@ -1,0 +1,20 @@
+version: "3.1"
+
+services:
+  api:
+    build: .
+    ports:
+      - 1323:1323
+    environment:
+      DATA_SOURCE_NAME: root:password@tcp(db:3306)/sample_db
+      PORT: :1323
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: sample_db
+    volumes:
+      - ./config:/docker-entrypoint-initdb.d
+    ports:
+      - "3307:3306"

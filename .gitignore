@@ -1,0 +1,6 @@
+# General
+.DS_Store
+.idea
+
+# test file
+*.txt
