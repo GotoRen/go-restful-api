@@ -10,10 +10,10 @@
     -  __Golang__：go version go1.15.4 darwin/amd6
     - __MySQL for Docker__：Server version: 8.0.22 MySQL Community Server - GPL
   - __OS__：Linux 20.04.1 LTS (Focal Fossa) ⬅︎ 仮想マシン
-    -  __Golang__：go version go1.15.6 linux/amd6
+    - __Golang__：go version go1.15.6 linux/amd6
     - __MySQL for Docker__：Server version: 8.0.22 MySQL Community Server - GPL
   - __OS__：Linux 20.04.1 LTS (Focal Fossa)
-    -  __Golang__：go version go1.13.8 linux/amd6
+    - __Golang__：go version go1.13.8 linux/amd6
     - __MySQL for Docker__：Server version: 8.0.22 MySQL Community Server - GPL
 
 ## ⚡ Configure
