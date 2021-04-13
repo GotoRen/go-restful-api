@@ -5,7 +5,14 @@
 - フレームワーク：[echo（Golang）](https://echo.labstack.com/)
 
 ## 🌍 Environment
-- 動作させた環境
+- 環境
+
+| 言語/フレームワーク | バージョン |
+| :---: | :---: |
+| go | go version go1.15 darwin/amd64 |
+| MySQL | mysql  Ver 8.0.23 for Linux on x86_64 (MySQL Community Server - GPL)|
+
+- OS
   - __OS__：macOS Catalina ver. 10.15.7
     - __Golang__：go version go1.15.4 darwin/amd6
     - __MySQL for Docker__：Server version: 8.0.22 MySQL Community Server - GPL
@@ -15,6 +22,7 @@
   - __OS__：Linux 20.04.1 LTS (Focal Fossa)
     - __Golang__：go version go1.13.8 linux/amd6
     - __MySQL for Docker__：Server version: 8.0.22 MySQL Community Server - GPL
+
 
 ## ⚡ Configure
 - 権限

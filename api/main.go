@@ -2,68 +2,82 @@ package main
 
 import (
 	"database/sql"
+	"fmt"
+	"log"
 	"net/http"
-	"os"
 	"strconv"
 
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/kelseyhightower/envconfig"
 	"github.com/labstack/echo"
 )
 
-var connection *sql.DB
+type User struct {
+	ID   int    `required:"true"`
+	Name string `required:"true"`
+}
+
+var DB *sql.DB
+
+type dbConfig struct {
+	Host     string `required:"true"`
+	User     string `required:"true"`
+	Password string `required:"true"`
+	Database string `required:"true"`
+}
+
+func dbClient(dsn string) (*sql.DB, error) {
+	db, err := sql.Open("mysql", dsn)
+	if err != nil {
+		return nil, err
+	}
+	return db, nil
+}
+
+func init() {
+	dbConf := dbConfig{}
+	err := envconfig.Process("db", &dbConf)
+	if err != nil {
+		log.Printf("db init error: %v", err)
+	}
+
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbConf.User, dbConf.Password, dbConf.Host, dbConf.Database)
+	db, err := dbClient(dsn)
+	if err != nil {
+		log.Printf("db init error: %v", err)
+	}
+	DB = db
+}
 
 func main() {
-	/*** ローカル環境のMySQLに接続 ***/
-	//db, err := sql.Open("mysql", "root:password@tcp(:3306)/sample_db")
-
-	/*** DockerコンテナのMySQLに接続 ***/
-	db, err := sql.Open("mysql", os.Getenv("DATA_SOURCE_NAME"))
-	if err != nil {
-		panic(err.Error())
-	}
-	connection = db
-	defer db.Close()
-
 	e := echo.New()
-	//e.GET("/", func(c echo.Context) error {
-	//	return c.String(http.StatusOK, "Hello, World!")
-	//})
 	e.GET("/users", GetUsers)
 	e.GET("/users/:id", GetUser)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
 
-// User型
-type User struct {
-	ID   int
-	Name string
-}
-
-// /users でアクセス
 func GetUsers(c echo.Context) error {
-	users, err := FindAll(connection)
+	users, err := FindAll(DB)
 	if err != nil {
 		return err
 	}
 	return c.JSON(http.StatusOK, users)
 }
 
-// /users/id でアクセス
 func GetUser(c echo.Context) error {
 	userid, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		return err
 	}
-	user, err := FindById(connection, userid)
+	user, err := FindById(DB, userid)
 	if err != nil {
 		return err
 	}
 	return c.JSON(http.StatusOK, user)
 }
 
-// Fetch All
-func FindAll(db *sql.DB) ([]User, error) {   // []*user  ユーザ型のポインタの配列を返す
+func FindAll(db *sql.DB) ([]User, error) {
 	rows, err := db.Query("SELECT * FROM users")
 	defer rows.Close()
 	if err != nil {
@@ -82,7 +96,6 @@ func FindAll(db *sql.DB) ([]User, error) {   // []*user  ユーザ型のポイ�
 	return users, nil
 }
 
-// Fetch ID
 func FindById(db *sql.DB, id int) (User, error) {
 	rows, err := db.Query("SELECT * FROM users WHERE id = ?", id)
 	defer rows.Close()

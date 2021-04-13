@@ -1,0 +1,40 @@
+version: "3.1"
+
+services:
+  app:
+    container_name: go-restful-api_app
+    image: go-restful-api/app
+    build:
+      context: api
+      dockerfile: ./Dockerfile
+    ports:
+      - 9090:1323
+    volumes:
+      - ./api/:/app
+    env_file:
+      - .env
+    networks:
+      - container-link
+  db:
+    container_name: go-restful-api_db
+    image: go-restful-api/db
+    build:
+      context: db
+      dockerfile: ./Dockerfile
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./db/init.d:/docker-entrypoint-initdb.d
+    env_file:
+      - .env.db
+    networks: 
+      - container-link
+
+networks:
+  default:
+    external:
+      name: bridge
+  container-link:
+    name: go-restful-api_link
