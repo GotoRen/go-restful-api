@@ -3,7 +3,7 @@ version: "3.1"
 services:
   app:
     container_name: go-restful-api_app
-    image: go-restful-api/app
+    image: go-restful-api/app:go-restful-api-v1
     build:
       context: api
       dockerfile: ./Dockerfile
@@ -17,7 +17,7 @@ services:
       - container-link
   db:
     container_name: go-restful-api_db
-    image: go-restful-api/db
+    image: go-restful-api/db:go-restful-api-v1
     build:
       context: db
       dockerfile: ./Dockerfile
