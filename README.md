@@ -1,5 +1,4 @@
 # Golang-RESTful-API
-
 ## 💡 Overview
 - GolangでAPIを作成してDockerで動かす
 - フレームワーク：echo（Golang）
@@ -11,18 +10,8 @@
 
 | 言語/フレームワーク | バージョン |
 | :---: | :---: |
-| go | go version go1.15 darwin/amd64 |
+| Golang | go version go1.15 darwin/amd64 |
 | MySQL | mysql  Ver 8.0.23 for Linux on x86_64 (MySQL Community Server - GPL)|
-
-- __OS__：macOS Catalina ver. 10.15.7
-  - __Golang__：go version go1.15.4 darwin/amd6
-  - __MySQL for Docker__：Server version: 8.0.22 MySQL Community Server - GPL
-- __OS__：Linux 20.04.1 LTS (Focal Fossa) ⬅︎ 仮想マシン
-  - __Golang__：go version go1.15.6 linux/amd6
-  - __MySQL for Docker__：Server version: 8.0.22 MySQL Community Server - GPL
-- __OS__：Linux 20.04.1 LTS (Focal Fossa)
-  - __Golang__：go version go1.13.8 linux/amd6
-  - __MySQL for Docker__：Server version: 8.0.22 MySQL Community Server - GPL
 
 ## 🚀 Usage  
 - 必要な権限と構成情報を設定した後、実行する  
