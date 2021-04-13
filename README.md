@@ -7,46 +7,36 @@
   - [https://github.com/labstack/echo](https://github.com/labstack/echo)
 
 ## 🌍 Environment
-- 環境
-
 | 言語/フレームワーク | バージョン |
 | :---: | :---: |
-| go | go version go1.15 darwin/amd64 |
+| Golang | go version go1.15 darwin/amd64 |
 | MySQL | mysql  Ver 8.0.23 for Linux on x86_64 (MySQL Community Server - GPL)|
 
-- __OS__：macOS Catalina ver. 10.15.7
-  - __Golang__：go version go1.15.4 darwin/amd6
-  - __MySQL for Docker__：Server version: 8.0.22 MySQL Community Server - GPL
-- __OS__：Linux 20.04.1 LTS (Focal Fossa) ⬅︎ 仮想マシン
-  - __Golang__：go version go1.15.6 linux/amd6
-  - __MySQL for Docker__：Server version: 8.0.22 MySQL Community Server - GPL
-- __OS__：Linux 20.04.1 LTS (Focal Fossa)
-  - __Golang__：go version go1.13.8 linux/amd6
-  - __MySQL for Docker__：Server version: 8.0.22 MySQL Community Server - GPL
-
 ## 🚀 Usage  
-- 必要な権限と構成情報を設定した後、実行する  
 ```
-### コンテナ起動 & 実行
+### キャッシュ無しビルド & 起動
+$ docker-compose build --no-cache && docker-compose up -d
+
+### 起動
 $ docker-compose up -d
 
 ### 確認
 === * 起動するDockerコンテナ * ===
 $ docker ps
-CONTAINER ID   IMAGE                COMMAND                  CREATED         STATUS         PORTS                               NAMES
-f95985909759   go-restful-api/db    "docker-entrypoint.s…"   3 minutes ago   Up 2 minutes   33060/tcp, 0.0.0.0:3307->3306/tcp   go-restful-api_db
-e2c1a557162e   go-restful-api/app   "./main"                 3 minutes ago   Up 2 minutes   0.0.0.0:9090->8080/tcp              go-restful-api_app
+CONTAINER ID   IMAGE                COMMAND                  CREATED              STATUS              PORTS                               NAMES
+11444393d32a   go-restful-api/db    "docker-entrypoint.s…"   About a minute ago   Up About a minute   33060/tcp, 0.0.0.0:3307->3306/tcp   go-restful-api_db
+ac3e965540e8   go-restful-api/app   "./main"                 About a minute ago   Up About a minute   0.0.0.0:9090->8080/tcp              go-restful-api_app
 
 === * 作成されるDockerイメージ * ===
 $ docker images
-REPOSITORY                           TAG        IMAGE ID       CREATED         SIZE
-go-restful-api/app                   latest     9b0353e1fadb   3 minutes ago   14MB
-go-restful-api/db                    latest     8c6bc13c1a11   3 days ago      546MB
+REPOSITORY                           TAG        IMAGE ID       CREATED              SIZE
+go-restful-api/app                   latest     dc41b5111da1   About a minute ago   14MB
+go-restful-api/db                    latest     8c6bc13c1a11   3 days ago           546MB
 
 === * 作成されるDockerネットワーク * ===
 $ docker network ls
 NETWORK ID     NAME                    DRIVER    SCOPE
-116d3317efc5   go-restful-api_link     bridge    local
+93c6a7a73d3b   go-restful-api_link     bridge    local
 
 ### ログ
 $ docker-compose logs -f
