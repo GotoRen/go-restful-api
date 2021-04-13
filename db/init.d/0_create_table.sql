@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS `sample_db`;
+
+CREATE TABLE IF NOT EXISTS `sample_db`.`users` (
+  `id`   INT          NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(256) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 

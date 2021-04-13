@@ -54,7 +54,7 @@ func main() {
 	e.GET("/users", GetUsers)
 	e.GET("/users/:id", GetUser)
 
-	e.Logger.Fatal(e.Start(":1323"))
+	e.Logger.Fatal(e.Start(":8080"))
 }
 
 func GetUsers(c echo.Context) error {
