@@ -39,11 +39,13 @@ e2c1a557162e   go-restful-api/app   "./main"                 3 minutes ago   Up 
 
 === * 作成されるDockerイメージ * ===
 $ docker images
+REPOSITORY                           TAG        IMAGE ID       CREATED         SIZE
 go-restful-api/app                   latest     9b0353e1fadb   3 minutes ago   14MB
 go-restful-api/db                    latest     8c6bc13c1a11   3 days ago      546MB
 
 === * 作成されるDockerネットワーク * ===
 $ docker network ls
+NETWORK ID     NAME                    DRIVER    SCOPE
 116d3317efc5   go-restful-api_link     bridge    local
 
 ### ログ
