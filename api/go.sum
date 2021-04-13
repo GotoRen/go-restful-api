@@ -1,3 +1,4 @@
+github.com/GotoRen/go-restful-api v0.0.0-20210413164656-a4e6036a1921 h1:e0W18luHhFKBIxhbKr88wbozd9n7vZOnDp107kD2cpQ=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/go-sql-driver/mysql v1.6.0 h1:BCTh4TKNUYmOmMUcQ3IipzF5prigylS7XXjEkfCHuOE=
 github.com/go-sql-driver/mysql v1.6.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=

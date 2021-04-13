@@ -2,13 +2,12 @@ package model
 
 import (
 	"database/sql"
+	"fmt"
 )
 
-var DB *sql.DB
-
 type User struct {
-	ID   int    `required:"true"`
-	Name string `required:"true"`
+	ID   int
+	Name string
 }
 
 func FindAll(db *sql.DB) ([]User, error) {
@@ -27,10 +26,12 @@ func FindAll(db *sql.DB) ([]User, error) {
 		users = append(users, user)
 	}
 
+	fmt.Println("users:", users)
 	return users, nil
 }
 
 func FindById(db *sql.DB, id int) (User, error) {
+	fmt.Println("id:", id)
 	rows, err := db.Query("SELECT * FROM users WHERE id = ?", id)
 	defer rows.Close()
 	if err != nil {
@@ -42,5 +43,7 @@ func FindById(db *sql.DB, id int) (User, error) {
 	if err := rows.Scan(&user.ID, &user.Name); err != nil {
 		return User{}, err
 	}
+
+	fmt.Println("user:", user.ID, user.Name)
 	return user, nil
 }

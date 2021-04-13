@@ -1,28 +1,16 @@
 package controller
 
 import (
-	"database/sql"
-	"fmt"
 	"net/http"
 	"strconv"
 
+	"github.com/GotoRen/go-restful-api/api/database"
 	"github.com/GotoRen/go-restful-api/api/model"
 	"github.com/labstack/echo"
 )
 
-var DB *sql.DB
-
-type User struct {
-	ID   int    `required:"true"`
-	Name string `required:"true"`
-}
-
-func SayHello() {
-	fmt.Println("Hello")
-}
-
 func GetUsers(c echo.Context) error {
-	users, err := model.FindAll(DB)
+	users, err := model.FindAll(database.Conn())
 	if err != nil {
 		return err
 	}
@@ -34,7 +22,7 @@ func GetUser(c echo.Context) error {
 	if err != nil {
 		return err
 	}
-	user, err := model.FindById(DB, userid)
+	user, err := model.FindById(database.Conn(), userid)
 	if err != nil {
 		return err
 	}
