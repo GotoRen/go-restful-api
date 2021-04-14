@@ -6,11 +6,13 @@
   - [https://echo.labstack.com](https://echo.labstack.com)
   - [https://github.com/labstack/echo](https://github.com/labstack/echo)
 
-## 🌍 Environment
+## 🌍 Requirements
 | 言語/フレームワーク | バージョン |
 | :---: | :---: |
-| Golang | go version go1.15 darwin/amd64 |
-| MySQL | mysql  Ver 8.0.23 for Linux on x86_64 (MySQL Community Server - GPL)|
+| Golang | 1.15 |
+| Docker | 20.10.5 |
+| docker-compose | 1.29.0 |
+| MySQL | 8.0.23 |
 
 ## 🚀 Usage  
 ```
