@@ -25,20 +25,20 @@ $ docker-compose up -d
 ### 確認
 === * 起動するDockerコンテナ * ===
 $ docker ps
-CONTAINER ID   IMAGE                COMMAND                  CREATED              STATUS              PORTS                               NAMES
-11444393d32a   go-restful-api/db    "docker-entrypoint.s…"   About a minute ago   Up About a minute   33060/tcp, 0.0.0.0:3307->3306/tcp   go-restful-api_db
-ac3e965540e8   go-restful-api/app   "./main"                 About a minute ago   Up About a minute   0.0.0.0:9090->8080/tcp              go-restful-api_app
+CONTAINER ID   IMAGE                COMMAND                  CREATED         STATUS         PORTS                               NAMES
+d20bdfdcbb9e   go-restful-api_db    "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   33060/tcp, 0.0.0.0:3307->3306/tcp   go-restful-api_db
+86b3d84ae452   go-restful-api/app   "./main"                 2 minutes ago   Up 2 minutes   0.0.0.0:9090->8080/tcp              go-restful-api_app
 
 === * 作成されるDockerイメージ * ===
 $ docker images
-REPOSITORY                           TAG        IMAGE ID       CREATED              SIZE
-go-restful-api/app                   latest     dc41b5111da1   About a minute ago   14MB
-go-restful-api/db                    latest     8c6bc13c1a11   3 days ago           546MB
+REPOSITORY                           TAG        IMAGE ID       CREATED         SIZE
+go-restful-api/app                   latest     dfd2fc6df75e   4 minutes ago   14MB
+go-restful-api_db                    latest     8c6bc13c1a11   3 days ago      546MB
 
 === * 作成されるDockerネットワーク * ===
 $ docker network ls
-NETWORK ID     NAME                    DRIVER    SCOPE
-93c6a7a73d3b   go-restful-api_link     bridge    local
+NETWORK ID     NAME                  DRIVER    SCOPE
+f56484cfd19a   go-restful-api_link   bridge    local
 
 ### ログ
 $ docker-compose logs -f
