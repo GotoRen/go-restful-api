@@ -7,12 +7,13 @@ services:
     build:
       context: api
       dockerfile: ./Dockerfile
+    tty: true
     ports:
       - 9090:8080
     volumes:
       - ./api/:/app
     env_file:
-      - .env
+      - ./api/.env
     networks:
       - container-link
   db:
@@ -20,14 +21,18 @@ services:
     build:
       context: db
       dockerfile: ./Dockerfile
+    tty: true
     ports:
-      - "3307:3306"
+      - 3307:3306
     volumes:
+      - ./db/script/container-init.sh:/tmp/container-init.sh
       - ./db/data:/var/lib/mysql
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./db/init.d:/docker-entrypoint-initdb.d
+    entrypoint: bash -c "bash /tmp/container-init.sh && /bin/bash"
     env_file:
-      - .env.db
+      - ./db/.env
+      - ./db/script/.env
     networks: 
       - container-link
 
