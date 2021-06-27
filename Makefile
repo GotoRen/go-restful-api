@@ -21,9 +21,6 @@ stop: ## docker stop
 down: ## docker down
 	$(COMPOSE) down
 
-down/data: ## delete persistent volume
-	rm -r ./db/data
-
 down/all: ## delete images, network, containers
 	$(DOCKER) system prune --all
 

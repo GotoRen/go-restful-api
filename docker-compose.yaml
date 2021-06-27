@@ -23,7 +23,7 @@ services:
     ports:
       - "3307:3306"
     volumes:
-      - ./db/data:/var/lib/mysql
+      - mysqldb:/var/lib/mysql
       - ./db/conf.d:/etc/mysql/conf.d
       - ./db/init.d:/docker-entrypoint-initdb.d
       - ./db/access.cnf:/home/access.cnf
@@ -31,6 +31,9 @@ services:
       - .env.db
     networks: 
       - container-link
+
+volumes:
+  mysqldb: {}
 
 networks:
   default:
