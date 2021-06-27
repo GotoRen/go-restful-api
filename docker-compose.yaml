@@ -27,6 +27,7 @@ services:
       - ./db/conf.d:/etc/mysql/conf.d
       - ./db/init.d:/docker-entrypoint-initdb.d
       - ./db/access.cnf:/home/access.cnf
+    command: chcon -t "svirt_sandbox_file_t" ./db/data/
     env_file:
       - .env.db
     networks: 
