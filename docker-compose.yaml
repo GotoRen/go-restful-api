@@ -13,6 +13,7 @@ services:
       - ./api/:/app
     env_file:
       - .env
+      - .env.vol
     networks:
       - container-link
   db:

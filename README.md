@@ -17,7 +17,7 @@
 ## 🚀 Usage  
 ```
 ### 起動
-$ make up
+$ make
 
 ### appコンテナに入る
 $ make app/api

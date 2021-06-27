@@ -8,13 +8,16 @@ VOLUME=docker volume
 APP=app
 DB=db
 
-all: build up
+all: grant up 
 
 build: ## docker build
 	$(BUILD)
 
 up: ## docker up
 	$(UP)
+
+grant: ## Add UID,GID to env
+	./$(DB)/script/container-init.sh
 
 stop: ## docker stop
 	$(COMPOSE) stop
