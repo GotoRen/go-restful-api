@@ -60,17 +60,17 @@ f56484cfd19a   go-restful-api_link   bridge    local
 ```
 ### macOS ###
 # ls -al /var/lib/ | grep mysql
-drwxrwxrwt 7 mysql mysql 4096 Jun 27 10:56 mysql
+drwxr-xr-x 29 mysql root  928 Jun 27 11:44 mysql
 
 # ls -al /var/run/ | grep mysqld
-drwxrwxrwt 1 mysql mysql 4096 Jun 27 10:56 mysqld
+drwxrwxrwt 1 mysql root 4096 Jun 27 11:44 mysqld
 
 ### Linux ###
 # ls -al /var/lib/ | grep mysql
-drwxrwxrwt 7 mysql mysql 4096 Jun 27 10:44 mysql
+drwxr-xr-x 7 mysql root 4096 Jun 27 11:36 mysql
 
 # ls -al /var/run/ | grep mysqld
-drwxrwxrwt 1 mysql mysql 4096 Jun 27 10:44 mysqld
+drwxrwxrwt 1 mysql root 4096 Jun 27 11:36 mysqld
 ```
 
 ## 💣 Other
