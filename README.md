@@ -92,4 +92,4 @@ $ make down/vol
 - [GolangでシンプルなRESTful APIを作ってみた](https://qiita.com/yuuulf/items/b464735dfb3486d248bf)
 - [Goで作ったWebアプリをDockerで動かす](https://qiita.com/yuuulf/items/b678b00972d60c7d63dd)
 - [MySQL8.0新機能 (caching_sha2_password 認証プラグイン)](https://www.s-style.co.jp/blog/2018/05/1807/)
-
+- [Docker上のMySQLのデータをVolumeでホストのディレクトリにマウントすると権限周りで面倒なことになる](https://qiita.com/ysd_marrrr/items/e8a50c43cff87951385c)
