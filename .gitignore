@@ -4,3 +4,6 @@
 
 # volume
 db/data/
+
+# envfile
+.env.vol
