@@ -4,6 +4,7 @@ UP=$(COMPOSE) up -d
 BUILD=$(COMPOSE) build --no-cache
 EXEC=$(COMPOSE) exec
 LOGS=$(COMPOSE) logs -f
+VOLUME=docker volume
 APP=app
 DB=db
 
@@ -44,6 +45,12 @@ logs/app: ## app container logs
 
 logs/db: ## db container logs
 	$(LOGS) $(DB)
+
+vol/list: ## volume list
+	$(VOLUME) ls
+
+vol/which: ## volume inspect
+	$(VOLUME) inspect go-restful-api_mysqldb
 
 help: ## Display this help screen
 	@grep -E '^[a-zA-Z/_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'

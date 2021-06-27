@@ -56,6 +56,23 @@ NETWORK ID     NAME                  DRIVER    SCOPE
 f56484cfd19a   go-restful-api_link   bridge    local
 ```
 
+## 🚫 Permissions
+```
+### macOS ###
+# ls -al /var/lib/ | grep mysql
+drwxrwxrwt 7 mysql mysql 4096 Jun 27 10:56 mysql
+
+# ls -al /var/run/ | grep mysqld
+drwxrwxrwt 1 mysql mysql 4096 Jun 27 10:56 mysqld
+
+### Linux ###
+# ls -al /var/lib/ | grep mysql
+drwxrwxrwt 7 mysql mysql 4096 Jun 27 10:44 mysql
+
+# ls -al /var/run/ | grep mysqld
+drwxrwxrwt 1 mysql mysql 4096 Jun 27 10:44 mysqld
+```
+
 ## 💣 Other
 ```
 ### 不要（`<none>`）imageのみを削除
