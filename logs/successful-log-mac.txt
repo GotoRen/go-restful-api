@@ -1,0 +1,57 @@
+Attaching to go-restful-api_db_1, go-restful-api_api_1
+api_1  | 
+api_1  |    ____    __
+api_1  |   / __/___/ /  ___
+api_1  |  / _// __/ _ \/ _ \
+api_1  | /___/\__/_//_/\___/ v3.3.10-dev
+api_1  | High performance, minimalist Go web framework
+api_1  | https://echo.labstack.com
+api_1  | ____________________________________O/_______
+api_1  |                                     O\
+api_1  | ⇨ http server started on [::]:1323
+db_1   | 2020-12-28 11:04:57+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.22-1debian10 started.
+db_1   | 2020-12-28 11:04:57+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db_1   | 2020-12-28 11:04:57+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.22-1debian10 started.
+db_1   | 2020-12-28 11:04:57+00:00 [Note] [Entrypoint]: Initializing database files
+db_1   | 2020-12-28T11:04:57.371006Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.22) initializing of server in progress as process 44
+db_1   | 2020-12-28T11:04:57.376071Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+db_1   | 2020-12-28T11:04:57.866878Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+db_1   | 2020-12-28T11:04:59.186474Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+db_1   | 2020-12-28 11:05:02+00:00 [Note] [Entrypoint]: Database files initialized
+db_1   | 2020-12-28 11:05:02+00:00 [Note] [Entrypoint]: Starting temporary server
+db_1   | 2020-12-28T11:05:02.519926Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.22) starting as process 89
+db_1   | 2020-12-28T11:05:02.536161Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+db_1   | 2020-12-28T11:05:02.732970Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+db_1   | 2020-12-28T11:05:02.873160Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+db_1   | 2020-12-28T11:05:02.991329Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+db_1   | 2020-12-28T11:05:02.991583Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+db_1   | 2020-12-28T11:05:02.993631Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+db_1   | 2020-12-28T11:05:03.027032Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.22'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+db_1   | 2020-12-28 11:05:03+00:00 [Note] [Entrypoint]: Temporary server started.
+db_1   | Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+db_1   | Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+db_1   | Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+db_1   | Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+db_1   | 2020-12-28 11:05:05+00:00 [Note] [Entrypoint]: Creating database sample_db
+db_1   | 
+db_1   | 2020-12-28 11:05:05+00:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/create_table.sql
+db_1   | 
+db_1   | 
+db_1   | 2020-12-28 11:05:05+00:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/init_data.sql
+db_1   | 
+db_1   | 
+db_1   | 2020-12-28 11:05:06+00:00 [Note] [Entrypoint]: Stopping temporary server
+db_1   | 2020-12-28T11:05:06.031666Z 13 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.22).
+db_1   | 2020-12-28T11:05:07.657286Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.22)  MySQL Community Server - GPL.
+db_1   | 2020-12-28 11:05:08+00:00 [Note] [Entrypoint]: Temporary server stopped
+db_1   | 
+db_1   | 2020-12-28 11:05:08+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+db_1   | 
+db_1   | 2020-12-28T11:05:08.252372Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.22) starting as process 1
+db_1   | 2020-12-28T11:05:08.259501Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+db_1   | 2020-12-28T11:05:08.449120Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+db_1   | 2020-12-28T11:05:08.549485Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+db_1   | 2020-12-28T11:05:08.610943Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+db_1   | 2020-12-28T11:05:08.611112Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+db_1   | 2020-12-28T11:05:08.613615Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+db_1   | 2020-12-28T11:05:08.636301Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.22'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.

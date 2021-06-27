@@ -1,0 +1,49 @@
+Attaching to go-restful-api_db
+db_1   | 2021-04-22 02:51:17+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.24-1debian10 started.
+db_1   | 2021-04-22 02:51:17+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db_1   | 2021-04-22 02:51:17+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.24-1debian10 started.
+db_1   | 2021-04-22 02:51:18+00:00 [Note] [Entrypoint]: Initializing database files
+db_1   | 2021-04-22T02:51:18.022773Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.24) initializing of server in progress as process 43
+db_1   | 2021-04-22T02:51:18.029911Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+db_1   | 2021-04-22T02:51:29.396777Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+db_1   | 2021-04-22T02:52:00.542895Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+db_1   | 2021-04-22 02:53:05+00:00 [Note] [Entrypoint]: Database files initialized
+db_1   | 2021-04-22 02:53:05+00:00 [Note] [Entrypoint]: Starting temporary server
+db_1   | 2021-04-22T02:53:06.104131Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.24) starting as process 88
+db_1   | 2021-04-22T02:53:06.354332Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+db_1   | 2021-04-22T02:53:07.605122Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+db_1   | 2021-04-22T02:53:07.808645Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+db_1   | 2021-04-22T02:53:08.481688Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+db_1   | 2021-04-22T02:53:08.482441Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+db_1   | 2021-04-22T02:53:08.534150Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+db_1   | 2021-04-22T02:53:08.579785Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.24'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+db_1   | 2021-04-22 02:53:08+00:00 [Note] [Entrypoint]: Temporary server started.
+db_1   | Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+db_1   | Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+db_1   | Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+db_1   | Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+db_1   | 2021-04-22 02:53:16+00:00 [Note] [Entrypoint]: Creating database sample_db
+db_1   | 2021-04-22 02:53:16+00:00 [Note] [Entrypoint]: Creating user user
+db_1   | 2021-04-22 02:53:16+00:00 [Note] [Entrypoint]: Giving user user access to schema sample_db
+db_1   |
+db_1   | 2021-04-22 02:53:16+00:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/0_create_table.sql
+db_1   |
+db_1   |
+db_1   | 2021-04-22 02:53:18+00:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/1_init_data.sql
+db_1   |
+db_1   |
+db_1   | 2021-04-22 02:53:19+00:00 [Note] [Entrypoint]: Stopping temporary server
+db_1   | 2021-04-22T02:53:19.954649Z 15 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.24).
+db_1   | 2021-04-22T02:53:41.250624Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.24)  MySQL Community Server - GPL.
+db_1   | 2021-04-22 02:53:41+00:00 [Note] [Entrypoint]: Temporary server stopped
+db_1   |
+db_1   | 2021-04-22 02:53:41+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+db_1   |
+db_1   | 2021-04-22T02:53:42.211884Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.24) starting as process 1
+db_1   | 2021-04-22T02:53:42.261319Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+db_1   | 2021-04-22T02:53:43.130371Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+db_1   | 2021-04-22T02:53:43.322259Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+db_1   | 2021-04-22T02:53:43.816723Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+db_1   | 2021-04-22T02:53:43.817213Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+db_1   | 2021-04-22T02:53:43.870156Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+db_1   | 2021-04-22T02:53:43.916489Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.24'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.

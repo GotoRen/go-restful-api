@@ -2,8 +2,5 @@
 .DS_Store
 .idea
 
-# test file
-*.txt
-
 # volumes
 db/data

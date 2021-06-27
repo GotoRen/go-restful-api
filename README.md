@@ -16,11 +16,26 @@
 
 ## 🚀 Usage  
 ```
-### キャッシュ無しビルド & 起動
-$ docker-compose build --no-cache && docker-compose up -d
-
 ### 起動
-$ docker-compose up -d
+$ make
+
+### appコンテナに入る
+$ make app/api
+
+### dbコンテナに入る
+$ make app/db
+
+### dbコンテナに入る + MySQL接続
+$ make mysql
+
+### ログ
+$ make logs
+
+### Fetch All
+$ curl localhost:9090/users
+
+### Fetch where ID
+$ curl localhost:9090/users/1
 
 ### 確認
 === * 起動するDockerコンテナ * ===
@@ -39,25 +54,18 @@ go-restful-api_db                    latest     8c6bc13c1a11   3 days ago      5
 $ docker network ls
 NETWORK ID     NAME                  DRIVER    SCOPE
 f56484cfd19a   go-restful-api_link   bridge    local
-
-### ログ
-$ docker-compose logs -f
-
-### Fetch All
-$ curl localhost:9090/users
-
-### Fetch where ID
-$ curl localhost:9090/users/1
 ```
 
 ## 💣 Other
 ```
-### 不要（`<none>`）イメージの削除
+### 不要（`<none>`）imageのみを削除
 $ docker rmi $(docker images -f "dangling=true" -q)
 
 ### 停止 & 除去
-$ docker-compose down
-$ docker rmi [イメージID]
+$ make down
+
+### 全てのイメージ、ネットワーク、コンテナを削除
+$ make down/all
 ```
 
 ## 📝 Reference

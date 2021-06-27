@@ -24,8 +24,9 @@ services:
       - "3307:3306"
     volumes:
       - ./db/data:/var/lib/mysql
-      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./db/conf.d:/etc/mysql/conf.d
       - ./db/init.d:/docker-entrypoint-initdb.d
+      - ./db/access.cnf:/home/access.cnf
     env_file:
       - .env.db
     networks: 
