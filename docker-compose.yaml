@@ -13,6 +13,7 @@ services:
       - ./api/:/app
     env_file:
       - .env
+      - .env.vol
     networks:
       - container-link
   db:
@@ -23,17 +24,15 @@ services:
     ports:
       - "3307:3306"
     volumes:
-      - mysqldb:/var/lib/mysql
+      - ./db/data:/var/lib/mysql
       - ./db/conf.d:/etc/mysql/conf.d
       - ./db/init.d:/docker-entrypoint-initdb.d
       - ./db/access.cnf:/home/access.cnf
+    command: bash -c 'usermod -o -u $LINUX_MYSQL_UID mysql; groupmod -o -g $LINUX_MYSQL_GID mysql; chown -R mysql:root /var/run/mysqld/ /var/log/mysql/ /var/lib/mysql/; /entrypoint.sh mysqld --user=mysql --console'
     env_file:
       - .env.db
     networks: 
       - container-link
-
-volumes:
-  mysqldb: {}
 
 networks:
   default:
